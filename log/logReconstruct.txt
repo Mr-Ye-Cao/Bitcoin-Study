@@ -1,4 +1,4 @@
-sending: version      (46 bytes)  
+sending: version      (46 bytes)  <net.h L 572>
 RandAddSeed() got 152496 bytes of performance data <util.cpp L 89>
 
 
@@ -22,11 +22,11 @@ RandAddSeed() got 152496 bytes of performance data <util.cpp L 89>
 
 Bitcoin CMyApp::OnInit() <ui.cpp L 2896>
 Loading addresses... <ui.cpp L 2971>
-dbenv.open strAppDir=C:\Documents and Settings\hal\Application Data\Bitcoin
-mapAddresses:
------
- addresses             3299217345
-Loading block index...
+dbenv.open strAppDir=C:\Documents and Settings\hal\Application Data\Bitcoin <db.cpp L 62>
+mapAddresses: <db.cpp L 453>
+----- <ui.cpp L 456>
+ addresses             3299217345 <ui.cpp L 2976>
+Loading block index... <ui.cpp L 2978>
 000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
 4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b
 000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
@@ -44,39 +44,40 @@ fGenerateBitcoins = 0
 nTransactionFee = 0
 addrIncoming = 0.0.0.0:8333
  wallet                4699436850
-Done loading
-mapBlockIndex.size() = 1
-nBestHeight = 0
-mapKeys.size() = 1
-mapPubKeys.size() = 1
-mapWallet.size() = 0
-mapAddressBook.size() = 1
+Done loading <ui.cpp L 2992>
+mapBlockIndex.size() = 1 <ui.cpp L 2995>
+nBestHeight = 0 <ui.cpp L 2996>
+mapKeys.size() = 1 <ui.cpp L 2997>
+mapPubKeys.size() = 1 <ui.cpp L 2998>
+mapWallet.size() = 0 <ui.cpp L 2999>
+mapAddressBook.size() = 1 <ui.cpp L 3000>
 addrLocalHost = 192.168.1.137:8333
 bound to addrLocalHost = 192.168.1.137:8333
 
-GetMyExternalIP() received [207.71.226.132] 207.71.226.132:8333
-ThreadMessageHandler started
-ThreadSocketHandler started
-ThreadOpenConnections started
-RefreshListCtrl starting
-RefreshListCtrl done
+GetMyExternalIP() received [207.71.226.132] 207.71.226.132:8333 <net.cpp L 125>
+ThreadMessageHandler started <net.cpp L 854>
+ThreadSocketHandler started <net.cpp L 460>
+ThreadOpenConnections started <net.cpp L 707>
+RefreshListCtrl starting <ui.cpp L 675>
+RefreshListCtrl done <ui.cpp L 713>
 IRC NOTICE AUTH :*** Looking up your hostname...
 IRC NOTICE AUTH :*** Checking ident
 IRC NOTICE AUTH :*** No identd (auth) response
 IRC NOTICE AUTH :*** Found your hostname
-SENDING: NICK uCeSAaG6R9Qidrs
+SENDING: NICK uCeSAaG6R9Qidrs <irc.cpp L 192> -> <irc.cpp L 50>
 
-SENDING: USER uCeSAaG6R9Qidrs 8 * : uCeSAaG6R9Qidrs
+SENDING: USER uCeSAaG6R9Qidrs 8 * : uCeSAaG6R9Qidrs <irc.cpp L 193> -> <irc.cpp L 50>
 
 IRC :lem.freenode.net 001 uCeSAaG6R9Qidrs :Welcome to the freenode IRC Network uCeSAaG6R9Qidrs
 IRC :lem.freenode.net 002 uCeSAaG6R9Qidrs :Your host is lem.freenode.net[lem.freenode.net/6667], running version hyperion-1.0.2b
 IRC NOTICE uCeSAaG6R9Qidrs :*** Your host is lem.freenode.net[lem.freenode.net/6667], running version hyperion-1.0.2b
 IRC :lem.freenode.net 003 uCeSAaG6R9Qidrs :This server was created Mon Nov  3 21:00:41 UTC 2008
 IRC :lem.freenode.net 004 uCeSAaG6R9Qidrs lem.freenode.net hyperion-1.0.2b aAbBcCdDeEfFGhHiIjkKlLmMnNopPQrRsStTuUvVwWxXyYzZ01234569*@ bcdefFhiIklmnoPqstv
-SENDING: JOIN #bitcoin
+SENDING: JOIN #bitcoin <irc.cpp L 205> -> <irc.cpp L 50>
 
-SENDING: WHO #bitcoin
+SENDING: WHO #bitcoin <irc.cpp L 206> -> <irc.cpp L 50>
 
+<following irc.cpp L 213>
 IRC :lem.freenode.net 005 uCeSAaG6R9Qidrs IRCD=dancer CAPAB CHANTYPES=# EXCEPTS INVEX CHANMODES=bdeIq,k,lfJD,cgijLmnPQrRstz CHANLIMIT=#:20 PREFIX=(ov)@+ MAXLIST=bdeI:50 MODES=4 STATUSMSG=@ KNOCK NICKLEN=16 :are supported by this server
 IRC :lem.freenode.net 005 uCeSAaG6R9Qidrs SAFELIST CASEMAPPING=ascii CHANNELLEN=30 TOPICLEN=450 KICKLEN=450 KEYLEN=23 USERLEN=10 HOSTLEN=63 SILENCE=50 :are supported by this server
 IRC :lem.freenode.net 251 uCeSAaG6R9Qidrs :There are 25590 listed and 21698 unlisted users on 34 servers
@@ -126,27 +127,27 @@ IRC :lem.freenode.net 372 uCeSAaG6R9Qidrs :- information.  Thank you for using f
 IRC :lem.freenode.net 376 uCeSAaG6R9Qidrs :End of /MOTD command.
 IRC :freenode-connect!freenode@freenode/bot/connect PRIVMSG ucesaag6r9qidrs :VERSION
 IRC :uCeSAaG6R9Qidrs!n=uCeSAaG6@226-132.adsl2.netlojix.net JOIN :#bitcoin
-GOT JOIN: [uCeSAaG6R9Qidrs]  CAddress(207.71.226.132:8333)
+GOT JOIN: [uCeSAaG6R9Qidrs]  CAddress(207.71.226.132:8333) <irc.cpp L 237>
 IRC :lem.freenode.net 353 uCeSAaG6R9Qidrs @ #bitcoin :uCeSAaG6R9Qidrs x93428606 @u4rfwoe8g3w5Tai 
 IRC :lem.freenode.net 366 uCeSAaG6R9Qidrs #bitcoin :End of /NAMES list.
 IRC :lem.freenode.net 352 uCeSAaG6R9Qidrs #bitcoin n=uCeSAaG6 226-132.adsl2.netlojix.net irc.freenode.net uCeSAaG6R9Qidrs H :0  uCeSAaG6R9Qidrs
-GOT WHO: [uCeSAaG6R9Qidrs]  CAddress(207.71.226.132:8333)
+GOT WHO: [uCeSAaG6R9Qidrs]  CAddress(207.71.226.132:8333) <irc.cpp L 228>
 IRC :lem.freenode.net 352 uCeSAaG6R9Qidrs #bitcoin i=x9342860 gateway/tor/x-bacc5813d7825a9a irc.freenode.net x93428606 H :0  x93428606
-GOT WHO: [x93428606]  IRC :lem.freenode.net 352 uCeSAaG6R9Qidrs #bitcoin n=u4rfwoe8 h-68-164-57-219.lsanca54.dynamic.covad.net irc.freenode.net u4rfwoe8g3w5Tai H@ :0  u4rfwoe8g3w5Tai
-GOT WHO: [u4rfwoe8g3w5Tai]  new  CAddress(68.164.57.219:8333)
+GOT WHO: [x93428606]  IRC :lem.freenode.net 352 uCeSAaG6R9Qidrs #bitcoin n=u4rfwoe8 h-68-164-57-219.lsanca54.dynamic.covad.net irc.freenode.net u4rfwoe8g3w5Tai H@ :0  u4rfwoe8g3w5Tai <irc.cpp L 228>
+GOT WHO: [u4rfwoe8g3w5Tai]  new  CAddress(68.164.57.219:8333) <irc.cpp L 228>
 IRC :lem.freenode.net 315 uCeSAaG6R9Qidrs #bitcoin :End of /WHO list.
 IRC :u4rfwoe8g3w5Tai!n=u4rfwoe8@h-68-164-57-219.lsanca54.dynamic.covad.net QUIT :Read error: 131 (Connection reset by peer)
 IRC :lem.freenode.net 477 ucesaag6r9qidrs #bitcoin :[freenode-info] if you're at a conference and other people are having trouble connecting, please mention it to staff: http://freenode.net/faq.shtml#gettinghelp
-trying 68.164.57.219:8333
-connected 68.164.57.219:8333
-sending: version      (46 bytes)  
-sending: addr         (27 bytes)  
-sending: getaddr      (0 bytes)  
-MainFrameRepaint()
-ProcessMessages(66 bytes)
-received: version      (46 bytes)  64 00 00 00 01 00 00 00 00 00 00 00 80 f0 68 49 00 00 00 00 00 00 00 00 00 
-Added time data, samples 2, ip db39a444, offset -4 (+0 minutes)
-sending: getblocks    (101 bytes)  
+trying 68.164.57.219:8333 <net.cpp L 374>
+connected 68.164.57.219:8333 <net.cpp L 381>
+sending: version      (46 bytes) <net.h L 572> ### This part is similar to L 1
+sending: addr         (27 bytes) <net.h L 572>
+sending: getaddr      (0 bytes)  <net.h L 572>
+MainFrameRepaint() <ui.cpp L 3146>
+ProcessMessages(66 bytes) <main.cpp L 1622>
+received: version      (46 bytes)  64 00 00 00 01 00 00 00 00 00 00 00 80 f0 68 49 00 00 00 00 00 00 00 00 00  <main.cpp L 1699>
+Added time data, samples 2, ip db39a444, offset -4 (+0 minutes) <util.cpp L 372>
+sending: getblocks    (101 bytes)  <net.h L 572>
 version addrMe = 192.168.0.1:1531
 ProcessMessages(1785 bytes)
 received: inv          (1765 bytes)  31 02 00 00 00 48 60 eb 18 bf 1b 16 20 e3 7e 94 90 fc 8a 42 75 14 41 6f d7 
@@ -327,7 +328,7 @@ dbenv.open strAppDir=C:\Documents and Settings\hal\Application Data\Bitcoin
 mapAddresses:
 CAddress(68.164.57.219:8333)
 -----
- addresses             3755451878
+ addresses             3755451878 
 Loading block index...
 LoadBlockIndex(): hashBestChain=000000000019d6  height=0
  block index             16394925
