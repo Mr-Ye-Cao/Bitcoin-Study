@@ -149,7 +149,7 @@ received: version      (46 bytes)  64 00 00 00 01 00 00 00 00 00 00 00 80 f0 68 
 Added time data, samples 2, ip db39a444, offset -4 (+0 minutes) <util.cpp L 372>
 sending: getblocks    (101 bytes)  <net.h L 572>
 version addrMe = 192.168.0.1:1531
-ProcessMessages(1785 bytes)
+ProcessMessages(1785 bytes) <main.cpp L 1622>
 received: inv          (1765 bytes)  31 02 00 00 00 48 60 eb 18 bf 1b 16 20 e3 7e 94 90 fc 8a 42 75 14 41 6f d7 
   got inventory: block 00000000839a  new
 askfor block 00000000839a  0
