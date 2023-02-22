@@ -706,14 +706,18 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast)
     // Limit adjustment step
     unsigned int nActualTimespan = pindexLast->nTime - pindexFirst->nTime;
     printf("  nActualTimespan = %d  before bounds\n", nActualTimespan);
+    // In this case the mining diffulty can be inferred to be too small?
     if (nActualTimespan < nTargetTimespan/4)
         nActualTimespan = nTargetTimespan/4;
+    // In this case the mining diffulty can be inferred to be too big?
     if (nActualTimespan > nTargetTimespan*4)
         nActualTimespan = nTargetTimespan*4;
 
     // Retarget
     CBigNum bnNew;
     bnNew.SetCompact(pindexLast->nBits);
+    // This two statements is equivalent to adjust bnNew by the ratio
+    // of nActualTimespan / nTargetTimespan.
     bnNew *= nActualTimespan;
     bnNew /= nTargetTimespan;
 

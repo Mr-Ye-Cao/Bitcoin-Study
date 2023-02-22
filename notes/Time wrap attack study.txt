@@ -1,0 +1,35 @@
+Resource:
+    Explain what is:
+        https://bitcoin.stackexchange.com/questions/75831/what-is-time-warp-attack-and-how-does-it-work-in-general
+        https://bitcointalk.org/index.php?topic=114751.0
+        https://bitcointalk.org/index.php?topic=43692.0#msg521772
+    Previous study:
+        https://blog.chainalysis.com/reports/time-travelling-with-satoshi/
+        https://www.coindesk.com/markets/2018/10/13/not-everyone-wants-to-fix-bitcoins-time-warp-attack-heres-why/
+
+Basic attack logic:
+    Goal: Lower mining difficulty
+    Approach:
+        1. Publish block with marginally larger time stamp while following the 2 rules of time stamps to ensure block accepted
+        2. Confuse majority miners to think the mining difficulty is harder than it actually is
+           Thus the future mining difficulty is lowered by the algorithm
+
+    Reasoning:
+        1. To achieve 
+            step 1: 
+                    Solve the mining problem, edit the algorithm to make sure the block timestamp field to be intentionally
+                    marginally higher yet accepted.
+
+            step 2: GetNextWorkRequired() is used to adjust the mining difficulty based on previous mining difficulty.
+                    The algorithm logic is that it systematically checks if the blocks are over-produced or under-produced.
+                    If the block is over / under-produced than exepcted by a factor of 4, i.e. a quarter or four times than exepcted,
+                    the number of hash bits (an indicator of difficulty) is adjusted by the ratio in proportion to the expected 
+                    produced blocks and actual produced blocks. If the margin is not too large, then simply adjust by the ratio.
+                    Otherwise if margin is greater than 4, then adjust 4 at maximum. Thus the difficulty is possible to be lowered
+                    to be 25% as previous. If this process continues, the difficulty could be continously lowered to be 25 percent:
+                    new_difficulty = diff * 0.25^n. This way, it's possible that mining difficulty could be as low.
+    
+    Problem:
+            Once the mining difficulty is lowered, the hash is solved more quickly. It will tend to over-produce the blocks.
+            Therefore, unless the majority miners collude to agree to publish their time stamp marginally higher. The
+            mining difficulty will be soon adjusted to be more difficult.
