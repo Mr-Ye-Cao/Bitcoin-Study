@@ -33,3 +33,10 @@ Basic attack logic:
             Once the mining difficulty is lowered, the hash is solved more quickly. It will tend to over-produce the blocks.
             Therefore, unless the majority miners collude to agree to publish their time stamp marginally higher. The
             mining difficulty will be soon adjusted to be more difficult.
+    
+    Further Possibility:
+        Since the majority miner's vote to decide what is the GetMedianTimePast() is equal, is it possible to add some
+        fake miners to fake that the majority miners' time stamp is actually higher.
+        For example, we create some fake miners who don't have computational powers but participate in the network to
+        provide their view of the current time. Then since the P-2-P network only considers majority time stamp, it 
+        would think the fake miners' time is the actual time.
