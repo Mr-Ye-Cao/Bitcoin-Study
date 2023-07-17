@@ -538,4 +538,4 @@ sending: addr         (27 bytes)
 sending: getaddr      (0 bytes)  
 MainFrameRepaint()
 IRC :uCeSAaG6R9Qidrs!n=uCeSAaG6@226-132.adsl2.netlojix.net JOIN :#bitcoin
-GOT JOIN: [uCeSAaG6R9Qidrs]  
+GOT JOIN: [uCeSAaG6R9Qidrs]
